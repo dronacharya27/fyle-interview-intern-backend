@@ -1,0 +1,23 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+    ports:
+      - "7755:7755"
+    environment:
+      - FLASK_APP=core/server.py
+      - FLASK_RUN_HOST=0.0.0.0
+    volumes:
+      - .:/app
+    command: ["bash", "run.sh"]
+
+  tests:
+    build:
+      context: .
+    environment:
+      - FLASK_APP=core/server.py
+      - FLASK_RUN_HOST=0.0.0.0
+    volumes:
+      - .:/app
+    command: ["pytest", "-vvv", "-s", "tests/"]
