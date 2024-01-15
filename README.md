@@ -56,9 +56,13 @@ To run the application using Docker, follow these steps:
 ```bash
 #Pull the Docker image from GitHub Packages:
 docker pull ghcr.io/dronacharya27/fyle-flask:latest
+#or
+docker pull dron2720/fyle-flask-test
 
 #Run the Docker container:
 docker run -p 7755:7755 ghcr.io/dronacharya27/fyle-flask:latest
+#or
+docker run -p 7755:7755 dron2720/fyle-flask-test
 ```
 
 
