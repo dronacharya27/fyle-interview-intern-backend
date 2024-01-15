@@ -12,9 +12,7 @@ This project is a backend service for a classroom, developed as part of the Fyle
   - [Start Server](#start-server)
   - [Run Tests](#run-tests)
 - [Dockerization](#dockerization)
-- [Gunicorn](#gunicorn)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Installation
 
