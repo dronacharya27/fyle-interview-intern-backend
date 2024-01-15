@@ -64,5 +64,6 @@ docker run -p 7755:7755 dron2720/fyle-flask-test
 ```
 
 
-
+## Coverage Report
+![Alt text](<Test Coverage Report.png>)
 
