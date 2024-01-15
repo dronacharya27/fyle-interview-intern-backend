@@ -1,56 +1,59 @@
 # Fyle Backend Challenge
 
-## Who is this for?
+## Introduction
 
-This challenge is meant for candidates who wish to intern at Fyle and work with our engineering team. You should be able to commit to at least 6 months of dedicated time for internship.
+This project is a backend service for a classroom, developed as part of the Fyle Backend Challenge.
 
-## Why work at Fyle?
+## Table of Contents
 
-Fyle is a fast-growing Expense Management SaaS product. We are ~40 strong engineering team at the moment. 
-
-We are an extremely transparent organization. Check out our [careers page](https://careers.fylehq.com) that will give you a glimpse of what it is like to work at Fyle. Also, check out our Glassdoor reviews [here](https://www.glassdoor.co.in/Reviews/Fyle-Reviews-E1723235.htm). You can read stories from our teammates [here](https://stories.fylehq.com).
-
-
-## Challenge outline
-
-This challenge involves writing a backend service for a classroom. The challenge is described in detail [here](./Application.md)
-
-
-## What happens next?
-
-You will hear back within 48 hours from us via email. 
-
+- [Installation](#installation)
+  - [Install Requirements](#install-requirements)
+  - [Reset Database](#reset-database)
+  - [Start Server](#start-server)
+  - [Run Tests](#run-tests)
+- [Dockerization](#dockerization)
+- [Gunicorn](#gunicorn)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Installation
 
-1. Fork this repository to your github account
-2. Clone the forked repository and proceed with steps mentioned below
+1. Fork this repository to your GitHub account.
+2. Clone the forked repository and proceed with the steps mentioned below.
 
-### Install requirements
+### Install Requirements
 
-```
+```bash
 virtualenv env --python=python3.8
 source env/bin/activate
 pip install -r requirements.txt
-```
-### Reset DB
 
-```
+### Reset Database
 export FLASK_APP=core/server.py
 rm core/store.sqlite3
 flask db upgrade -d core/migrations/
-```
-### Start Server
 
-```
+###Start Server
 bash run.sh
-```
-### Run Tests
 
-```
+###Run Tests
 pytest -vvv -s tests/
 
 # for test coverage report
-# pytest --cov
-# open htmlcov/index.html
-```
+coverage run -m pytest
+coverage html
+
+
+###Dockerization
+
+#To run the application using Docker, follow these steps:
+
+#Pull the Docker image from GitHub Packages:
+docker pull ghcr.io/dronacharya27/fyle-flask:latest
+
+#Run the Docker container:
+docker run -p 7755:7755 ghcr.io/dronacharya27/fyle-flask:latest
+
+###Gunicorn
+This project uses Gunicorn as the production-ready WSGI server. The Gunicorn configuration is set up in gunicorn_config.py.
+
