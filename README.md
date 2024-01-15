@@ -34,13 +34,14 @@ export FLASK_APP=core/server.py
 rm core/store.sqlite3
 flask db upgrade -d core/migrations/
 ```
-###Start Server
+### Start Server
+
 ```bash
 bash run.sh
 ```
 
 
-###Run Tests
+### Run Tests
 ```bash
 pytest -vvv -s tests/
 
@@ -50,7 +51,7 @@ coverage html
 ```
 
 
-##Dockerization
+## Dockerization
 To run the application using Docker, follow these steps:
 ```bash
 #Pull the Docker image from GitHub Packages:
@@ -61,6 +62,5 @@ docker run -p 7755:7755 ghcr.io/dronacharya27/fyle-flask:latest
 ```
 
 
-###Gunicorn
-This project uses Gunicorn as the production-ready WSGI server. The Gunicorn configuration is set up in gunicorn_config.py.
+
 
